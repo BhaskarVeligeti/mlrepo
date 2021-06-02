@@ -1,0 +1,36 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "machine learning node web server",
+  "main": "index.js",
+  "scripts": {
+    "dev1": "nodemon  --inspect-brk ./src/server/dev.js",
+    "dev": "nodemon --max-old-space-size=4096 ./src/server/dev.js",
+    "clean": "rimraf dist",
+    "build": "npm run clean  && webpack  --mode production --progress --config webpack.config.js",
+    "prod": "node ./dist/server.js"
+  },
+  "author": "Mr Bhaskar Veligeti",
+  "license": "MIT",
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^3.3.0",
+    "aws-sdk": "^2.866.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.11",
+    "node-pre-gyp": "^0.17.0",
+    "numeral": "^2.0.6",
+    "shuffle-seed": "^1.1.6"
+  },
+  "devDependencies": {
+    "mnist-data": "^1.2.6",
+    "node-remote-plot": "^1.2.0",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^2.5.2"
+  }
+}

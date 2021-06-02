@@ -1,0 +1,13 @@
+version: "2"
+services:
+  #define a service called app
+  mlserver:
+    #adding a container name
+    container_name: mlapi
+    #restart the container automatically if it fails
+    restart: always
+    #building the app image using the Dockerfile in the current directory
+    build: .
+    #mapping the host port to the container port.
+    ports:
+      - "4001:4001"
